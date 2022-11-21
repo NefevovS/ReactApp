@@ -1,0 +1,30 @@
+.imgSize {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px black solid;
+}
+.post {
+  background-color: beige;
+  margin-top: 10px;
+}
+.thumbUp {
+  width: 20px;
+  height: 20px;
+}
+.flexWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 10px;
+}
+.flexWrapper img {
+  margin-left: 10px;
+}
+
+button {
+  height: inherit;
+  width: inherit;
+  margin-top: -10px;
+  margin-left: 10px;
+}

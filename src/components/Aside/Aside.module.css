@@ -1,0 +1,23 @@
+.container {
+  padding-top: 100px;
+  width: 180px;
+}
+li {
+  list-style-type: none;
+  margin-bottom: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: regular;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  padding: 5px 5px;
+}
+a:hover {
+  background-color: white;
+}
+.active {
+  background-color: white;
+  font-weight: bold;
+}
