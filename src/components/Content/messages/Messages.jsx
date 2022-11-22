@@ -1,27 +1,40 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import s from "./Messages.module.css";
+
+const DialogItem = (props) => {
+  return (
+    <li className={s.dialogItem + " " + s.active}>
+      <NavLink to={"/messages/" + props.id}>{props.name}</NavLink>
+    </li>
+  );
+};
+
+const MessageItem = (props) => {
+  return <li className={s.messageItem}>{props.msg}</li>;
+};
 
 const Messages = () => {
   return (
     <div className={s.messages}>
       <div className={s.dialog}>
         <ul>
-          <li className={s.dialogItem + " " + s.active}>Sergey</li>
-          <li className={s.dialogItem}>Fedor</li>
-          <li className={s.dialogItem}>Ivan</li>
-          <li className={s.dialogItem}>Sveta</li>
-          <li className={s.dialogItem}>Natasha</li>
-          <li className={s.dialogItem}>Igor</li>
+          <DialogItem name="Sergey" id="1" />
+          <DialogItem name="Sveta" id="2" />
+          <DialogItem name="Natasha" id="3" />
+          <DialogItem name="Ivan" id="4" />
+          <DialogItem name="Igor" id="5" />
+          <DialogItem name="Alexander" id="6" />
         </ul>
       </div>
       <div className={s.message}>
         <ul>
-          <li className={s.messageItem}>Hi</li>
-          <li className={s.messageItem}>How are you?</li>
-          <li className={s.messageItem}>Ololo</li>
-          <li className={s.messageItem}>Упячка</li>
-          <li className={s.messageItem}>1243124</li>
-          <li className={s.messageItem}>ыалдтдйлцд</li>
+          <MessageItem msg="Hi" />
+          <MessageItem msg="How are you?" />
+          <MessageItem msg="Ololo" />
+          <MessageItem msg="Упячка" />
+          <MessageItem msg="1243124" />
+          <MessageItem msg="ыалдтдйлцд" />
         </ul>
       </div>
     </div>

@@ -1,0 +1,33 @@
+.newPost {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  row-gap: 20px;
+}
+.submit {
+  width: 100px;
+  align-self: flex-end;
+  color: #551a8b;
+  border-color: #551a8b;
+  border-radius: 10px;
+  padding: 5px;
+}
+.submit:hover {
+  background-color: white;
+  cursor: pointer;
+}
+textarea {
+  resize: none;
+  color: #551a8b;
+  border-color: #551a8b;
+  border-radius: 10px;
+}
+textarea:focus {
+  outline-color: #4a177a;
+}

@@ -8,3 +8,9 @@ body {
   display: flex;
   column-gap: 20px;
 }
+
+/* автоотступ справа. при появлении скрола контейнеры не сдвигаются */
+
+html {
+  margin-right: calc(-1 * (100vw - 100%));
+}

@@ -2,12 +2,3 @@
   background-color: white;
   width: 1200px;
 }
-.imgWrapper {
-  height: 250px;
-  overflow: hidden;
-  position: relative;
-}
-.imgWrapper img {
-  position: absolute;
-  top: -50%;
-}
