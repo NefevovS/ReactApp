@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import s from "./Messages.module.css";
 
+// ----------------ПРИХОДИТ С СЕРВЕРА--------------------------------
+
 const allDialogs = [
   {
     name: "Sergey",
@@ -50,7 +52,9 @@ const allMessages = [
     id: 5,
   },
 ];
+// ----------------ПРИХОДИТ С СЕРВЕРА--------------------------------
 
+// ---------------------ОБЪЯВЛЯЕМ КОМПОНЕНТЫ
 const DialogItem = (props) => {
   return (
     <li className={s.dialogItem + " " + s.active}>
@@ -62,29 +66,29 @@ const DialogItem = (props) => {
 const MessageItem = (props) => {
   return <li className={s.messageItem}>{props.msg}</li>;
 };
+// ---------------------ОБЪЯВЛЯЕМ КОМПОНЕНТЫ
+
+// ------------------ЗАПОЛНЯЕМ КОМПОНЕНТЫ ИНФОЙ ИЗ ОБЪЕКТА, ПОЛУЧЕННОГО С СЕРВЕРА
+
+const drawDialogs = allDialogs.map((item) => (
+  <DialogItem name={item.name} id={item.id} />
+));
+
+const drawMessages = allMessages.map((item) => (
+  <MessageItem msg={item.message} />
+));
+// ------------------ЗАПОЛНЯЕМ КОМПОНЕНТЫ ИНФОЙ ИЗ ОБЪЕКТА, ПОЛУЧЕННОГО С СЕРВЕРА
+
+// --------------------Объявляем общую компоненту и рисуем контент
 
 const Messages = () => {
   return (
     <div className={s.messages}>
       <div className={s.dialog}>
-        <ul>
-          <DialogItem name="Sergey" id="1" />
-          <DialogItem name="Sveta" id="2" />
-          <DialogItem name="Natasha" id="3" />
-          <DialogItem name="Ivan" id="4" />
-          <DialogItem name="Igor" id="5" />
-          <DialogItem name="Alexander" id="6" />
-        </ul>
+        <ul>{drawDialogs}</ul>
       </div>
       <div className={s.message}>
-        <ul>
-          <MessageItem msg="Hi" />
-          <MessageItem msg="How are you?" />
-          <MessageItem msg="Ololo" />
-          <MessageItem msg="Упячка" />
-          <MessageItem msg="1243124" />
-          <MessageItem msg="ыалдтдйлцд" />
-        </ul>
+        <ul>{drawMessages}</ul>
       </div>
     </div>
   );
