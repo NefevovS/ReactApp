@@ -2,6 +2,55 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import s from "./Messages.module.css";
 
+const allDialogs = [
+  {
+    name: "Sergey",
+    id: 1,
+  },
+  {
+    name: "Sveta",
+    id: 2,
+  },
+  {
+    name: "Natasha",
+    id: 3,
+  },
+  {
+    name: "Ivan",
+    id: 4,
+  },
+  {
+    name: "Igor",
+    id: 5,
+  },
+  {
+    name: "Alexander",
+    id: 6,
+  },
+];
+const allMessages = [
+  {
+    message: "How are you?",
+    id: 1,
+  },
+  {
+    message: "Ololo",
+    id: 2,
+  },
+  {
+    message: "Упячка",
+    id: 3,
+  },
+  {
+    message: "1243124",
+    id: 4,
+  },
+  {
+    message: "ыалдтдйлцд",
+    id: 5,
+  },
+];
+
 const DialogItem = (props) => {
   return (
     <li className={s.dialogItem + " " + s.active}>
