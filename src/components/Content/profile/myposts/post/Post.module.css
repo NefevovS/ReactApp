@@ -23,8 +23,12 @@
 }
 
 button {
-  height: inherit;
-  width: inherit;
-  margin-top: -10px;
-  margin-left: 10px;
+  width: 50px;
+  height: 40px;
+}
+.likesBtn {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
 }

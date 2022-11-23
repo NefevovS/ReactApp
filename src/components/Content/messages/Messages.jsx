@@ -3,73 +3,14 @@ import s from "./Messages.module.css";
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MessageItem/MessageItem";
 
-// ----------------ПРИХОДИТ С СЕРВЕРА--------------------------------
+const Messages = (props) => {
+  const drawDialogs = props.allDialogs.map((item) => (
+    <DialogItem name={item.name} id={item.id} />
+  ));
 
-const allDialogs = [
-  {
-    name: "Sergey",
-    id: 1,
-  },
-  {
-    name: "Sveta",
-    id: 2,
-  },
-  {
-    name: "Natasha",
-    id: 3,
-  },
-  {
-    name: "Ivan",
-    id: 4,
-  },
-  {
-    name: "Igor",
-    id: 5,
-  },
-  {
-    name: "Alexander",
-    id: 6,
-  },
-];
-const allMessages = [
-  {
-    message: "How are you?",
-    id: 1,
-  },
-  {
-    message: "Ololo",
-    id: 2,
-  },
-  {
-    message: "Упячка",
-    id: 3,
-  },
-  {
-    message: "1243124",
-    id: 4,
-  },
-  {
-    message: "ыалдтдйлцд",
-    id: 5,
-  },
-];
-
-// ----------------ПРИХОДИТ С СЕРВЕРА--------------------------------
-
-// ------------------ЗАПОЛНЯЕМ КОМПОНЕНТЫ ИНФОЙ ИЗ ОБЪЕКТА, ПОЛУЧЕННОГО С СЕРВЕРА
-
-const drawDialogs = allDialogs.map((item) => (
-  <DialogItem name={item.name} id={item.id} />
-));
-
-const drawMessages = allMessages.map((item) => (
-  <MessageItem msg={item.message} />
-));
-// ------------------ЗАПОЛНЯЕМ КОМПОНЕНТЫ ИНФОЙ ИЗ ОБЪЕКТА, ПОЛУЧЕННОГО С СЕРВЕРА
-
-// --------------------Объявляем общую компоненту и рисуем контент
-
-const Messages = () => {
+  const drawMessages = props.allMessages.map((item) => (
+    <MessageItem msg={item.message} />
+  ));
   return (
     <div className={s.messages}>
       <div className={s.dialog}>
