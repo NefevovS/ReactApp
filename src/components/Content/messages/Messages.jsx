@@ -1,6 +1,7 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import s from "./Messages.module.css";
+import DialogItem from "./DialogItem/DialogItem";
+import MessageItem from "./MessageItem/MessageItem";
 
 // ----------------ПРИХОДИТ С СЕРВЕРА--------------------------------
 
@@ -52,21 +53,8 @@ const allMessages = [
     id: 5,
   },
 ];
+
 // ----------------ПРИХОДИТ С СЕРВЕРА--------------------------------
-
-// ---------------------ОБЪЯВЛЯЕМ КОМПОНЕНТЫ
-const DialogItem = (props) => {
-  return (
-    <li className={s.dialogItem + " " + s.active}>
-      <NavLink to={"/messages/" + props.id}>{props.name}</NavLink>
-    </li>
-  );
-};
-
-const MessageItem = (props) => {
-  return <li className={s.messageItem}>{props.msg}</li>;
-};
-// ---------------------ОБЪЯВЛЯЕМ КОМПОНЕНТЫ
 
 // ------------------ЗАПОЛНЯЕМ КОМПОНЕНТЫ ИНФОЙ ИЗ ОБЪЕКТА, ПОЛУЧЕННОГО С СЕРВЕРА
 
