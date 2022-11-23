@@ -33,7 +33,7 @@ const Aside = () => {
         </li>
         <li>
           <NavLink
-            to="/Music"
+            to="/music"
             className={(navData) => (navData.isActive ? s.active : s.a)}
           >
             Music
@@ -41,7 +41,7 @@ const Aside = () => {
         </li>
         <li>
           <NavLink
-            to="/Settings"
+            to="/settings"
             className={(navData) => (navData.isActive ? s.active : s.a)}
           >
             Settings
@@ -49,12 +49,15 @@ const Aside = () => {
         </li>
         <li>
           <NavLink
-            to="/Friends"
+            to="/friends"
             className={(navData) => (navData.isActive ? s.active : s.a)}
           >
             Friends
           </NavLink>
         </li>
+        <div className={s.friendsAvatars}>
+          <FriendsAvatars />
+        </div>
       </ul>
     </div>
   );

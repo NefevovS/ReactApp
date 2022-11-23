@@ -13,7 +13,7 @@ function App(props) {
         <Header />
         <div className="position">
           <Aside />
-          <FriendsAvatars />
+
           <div className="app-wrapper">
             <Routes>
               <Route
