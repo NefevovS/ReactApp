@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./Aside.module.css";
 import { NavLink } from "react-router-dom";
+import FriendsAvatars from "../FriendsAvatars/FriendsAvatars";
 
 const Aside = () => {
   return (
@@ -44,6 +45,14 @@ const Aside = () => {
             className={(navData) => (navData.isActive ? s.active : s.a)}
           >
             Settings
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/Friends"
+            className={(navData) => (navData.isActive ? s.active : s.a)}
+          >
+            Friends
           </NavLink>
         </li>
       </ul>
