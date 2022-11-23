@@ -16,14 +16,14 @@ function App(props) {
             <Routes>
               <Route
                 path="/profile"
-                element={<Profile posts={props.posts} />}
+                element={<Profile posts={props.state.profile.posts} />}
               />
               <Route
                 path="/messages/*"
                 element={
                   <Messages
-                    allDialogs={props.allDialogs}
-                    allMessages={props.allMessages}
+                    allDialogs={props.state.messages.allDialogs}
+                    allMessages={props.state.messages.allMessages}
                   />
                 }
               />
