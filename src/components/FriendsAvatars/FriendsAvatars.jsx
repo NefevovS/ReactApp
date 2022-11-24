@@ -1,13 +1,11 @@
 import React from "react";
-import s from "./friendsAvatar.module.css";
 
-const FriendsAvatars = () => {
+const FriendsAvatars = (props) => {
   return (
     <div>
-      <img src="https://cdn.freelance.ru/images/att/1575043_900_600.png" />
+      <img src={props.img} alt="avatar" />
       <div>
-        <p>Имя</p>
-        <p>Фамилия</p>
+        <p>{props.name}</p>
       </div>
     </div>
   );

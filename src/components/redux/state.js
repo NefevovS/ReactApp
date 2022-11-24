@@ -49,25 +49,25 @@ let state = {
       },
     ],
     allMessages: [
+      { imAuthor: true, message: "How are you?", id: 1 },
+      { imAuthor: false, message: "Ololo", id: 2 },
+      { imAuthor: false, message: "Упячка", id: 3 },
+      { imAuthor: true, message: "1243124", id: 4 },
+      { imAuthor: false, message: "ыалдтдйлцд", id: 5 },
+    ],
+  },
+  avatar: {
+    friends: [
       {
-        message: "How are you?",
         id: 1,
+        name: "Sergey",
+        avatarSrc: "https://cdn.freelance.ru/images/att/1575043_900_600.png",
       },
       {
-        message: "Ololo",
         id: 2,
-      },
-      {
-        message: "Упячка",
-        id: 3,
-      },
-      {
-        message: "1243124",
-        id: 4,
-      },
-      {
-        message: "ыалдтдйлцд",
-        id: 5,
+        name: "Maria",
+        avatarSrc:
+          "https://omoro.ru/wp-content/uploads/2018/05/prikilnie-kartinki-na-avatarky-dlia-devyshek-48.jpg",
       },
     ],
   },

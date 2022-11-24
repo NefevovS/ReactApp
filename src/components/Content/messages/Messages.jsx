@@ -9,7 +9,7 @@ const Messages = (props) => {
   ));
 
   const drawMessages = props.allMessages.map((item) => (
-    <MessageItem msg={item.message} />
+    <MessageItem msg={item.message} imAuthor={item.imAuthor} />
   ));
   return (
     <div className={s.messages}>

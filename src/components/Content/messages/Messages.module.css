@@ -24,10 +24,15 @@
 }
 
 .messageItem {
-  display: block;
   background-color: beige;
   padding: 10px;
   border-radius: 30px;
+  width: fit-content;
+  float: right;
+}
+.messageItemMy {
+  margin-left: auto;
+  background-color: rgb(224, 224, 56);
 }
 
 a {

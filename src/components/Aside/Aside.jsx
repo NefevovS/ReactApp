@@ -3,7 +3,11 @@ import s from "./Aside.module.css";
 import { NavLink } from "react-router-dom";
 import FriendsAvatars from "../FriendsAvatars/FriendsAvatars";
 
-const Aside = () => {
+const Aside = (props) => {
+  const drawFriendsAvatars = props.avatar.friends.map((item) => (
+    <FriendsAvatars img={item.avatarSrc} name={item.name} />
+  ));
+
   return (
     <div className={s.container}>
       <ul>
@@ -55,9 +59,7 @@ const Aside = () => {
             Friends
           </NavLink>
         </li>
-        <div className={s.friendsAvatars}>
-          <FriendsAvatars />
-        </div>
+        <div className={s.friendsAvatars}>{drawFriendsAvatars}</div>
       </ul>
     </div>
   );

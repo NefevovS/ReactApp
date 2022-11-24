@@ -4,7 +4,6 @@ import Aside from "./components/Aside/Aside";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Profile from "./components/Content/profile/Profile";
 import Messages from "./components/Content/messages/Messages";
-import FriendsAvatars from "./components/FriendsAvatars/FriendsAvatars";
 
 function App(props) {
   return (
@@ -12,7 +11,7 @@ function App(props) {
       <div className="App">
         <Header />
         <div className="position">
-          <Aside />
+          <Aside avatar={props.state.avatar} />
 
           <div className="app-wrapper">
             <Routes>
