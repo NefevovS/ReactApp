@@ -15,6 +15,7 @@ const MyPost = (props) => {
       <Newpost
         addMsg={props.addMsg}
         updateNewPostText={props.updateNewPostText}
+        newPostText={props.newPostText}
       />
     </div>
   );

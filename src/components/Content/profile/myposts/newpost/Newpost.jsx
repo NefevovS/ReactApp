@@ -22,6 +22,7 @@ const Newpost = (props) => {
           type="textarea"
           ref={newPostElement}
           onChange={onPostChange}
+          value={props.newPostText}
         />
         <input
           type="button"

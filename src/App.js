@@ -22,6 +22,7 @@ function App(props) {
                     posts={props.state.profile.posts}
                     addMsg={props.addMsg}
                     updateNewPostText={props.updateNewPostText}
+                    newPostText={props.state.profile.newPostText}
                   />
                 }
               />
@@ -32,6 +33,7 @@ function App(props) {
                     posts={props.state.profile.posts}
                     addMsg={props.addMsg}
                     updateNewPostText={props.updateNewPostText}
+                    newPostText={props.state.profile.newPostText}
                   />
                 }
               />
