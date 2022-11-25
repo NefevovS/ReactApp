@@ -5,7 +5,9 @@ const Header = () => {
   return (
     <div>
       <div className={s.containerWide}>
-        <div className={s.container}>контент шапки</div>
+        <div className={s.container}>
+          <s>Facebook</s>
+        </div>
       </div>
     </div>
   );

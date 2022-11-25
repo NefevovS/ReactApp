@@ -75,11 +75,14 @@ let state = {
   },
 };
 
-export let addPost = (postMsg) => {
+export let addMsg = (postMsg) => {
   let newpost = { id: 5, message: postMsg, likesCount: 0 };
   state.profile.posts.push(newpost);
   rerenderIntireTree(state);
-  debugger;
 };
-
+export let addMessage = (newMessage) => {
+  let msg = { imAuthor: true, message: newMessage, id: 10 };
+  state.messages.allMessages.push(msg);
+  rerenderIntireTree(state);
+};
 export default state;

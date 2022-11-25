@@ -12,7 +12,7 @@ const MyPost = (props) => {
       <h2 className={s.header}>My posts</h2>
       {drawPosts}
 
-      <Newpost addPost={props.addPost} />
+      <Newpost addMsg={props.addMsg} />
     </div>
   );
 };
