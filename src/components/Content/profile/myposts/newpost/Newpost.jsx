@@ -2,12 +2,22 @@ import React from "react";
 import s from "./Newpost.module.css";
 
 const Newpost = () => {
+  let newPostElement = React.createRef();
+  let addPost = () => {
+    alert(newPostElement.current.value);
+  };
+
   return (
     <div className={s.newPost}>
-      <form>
-        <textarea type="textarea" rows="10" cols="50" />
-        <input type="submit" className={s.submit} />
-      </form>
+      <div className={s.postform}>
+        <textarea type="textarea" ref={newPostElement} />
+        <input
+          type="button"
+          value={"Отправить"}
+          className={s.btn}
+          onClick={addPost}
+        />
+      </div>
     </div>
   );
 };

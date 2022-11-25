@@ -3,14 +3,14 @@
   margin-bottom: 20px;
 }
 
-form {
+.postform {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   width: 75%;
   row-gap: 20px;
 }
-.submit {
+.btn {
   width: 100px;
   align-self: flex-end;
   color: #551a8b;
@@ -18,7 +18,7 @@ form {
   border-radius: 10px;
   padding: 5px;
 }
-.submit:hover {
+.btn:hover {
   background-color: white;
   cursor: pointer;
 }
@@ -27,6 +27,7 @@ textarea {
   color: #551a8b;
   border-color: #551a8b;
   border-radius: 10px;
+  padding: 10px;
 }
 textarea:focus {
   outline-color: #4a177a;

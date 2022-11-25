@@ -2,7 +2,6 @@ import React from "react";
 import s from "./../Messages.module.css";
 
 const MessageItem = (props) => {
-  debugger;
   return (
     <li
       className={
