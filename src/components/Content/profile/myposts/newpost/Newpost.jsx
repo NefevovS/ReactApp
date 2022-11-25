@@ -10,10 +10,19 @@ const Newpost = (props) => {
     newPostElement.current.value = "";
   };
 
+  let onPostChange = () => {
+    let text = newPostElement.current.value;
+    props.updateNewPostText(text);
+  };
+
   return (
     <div className={s.newPost}>
       <div className={s.postform}>
-        <textarea type="textarea" ref={newPostElement} />
+        <textarea
+          type="textarea"
+          ref={newPostElement}
+          onChange={onPostChange}
+        />
         <input
           type="button"
           value={"Отправить"}

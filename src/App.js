@@ -21,6 +21,7 @@ function App(props) {
                   <Profile
                     posts={props.state.profile.posts}
                     addMsg={props.addMsg}
+                    updateNewPostText={props.updateNewPostText}
                   />
                 }
               />
@@ -30,6 +31,7 @@ function App(props) {
                   <Profile
                     posts={props.state.profile.posts}
                     addMsg={props.addMsg}
+                    updateNewPostText={props.updateNewPostText}
                   />
                 }
               />

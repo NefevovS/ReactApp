@@ -22,6 +22,7 @@ let state = {
         likesCount: 15,
       },
     ],
+    newPostText: "",
   },
   messages: {
     allDialogs: [
@@ -83,6 +84,12 @@ export let addMsg = (postMsg) => {
 export let addMessage = (newMessage) => {
   let msg = { imAuthor: true, message: newMessage, id: 10 };
   state.messages.allMessages.push(msg);
+  rerenderIntireTree(state);
+};
+
+export let updateNewPostText = (newText) => {
+  state.profile.newPostText = newText;
+  console.log(state.profile.newPostText);
   rerenderIntireTree(state);
 };
 export default state;
