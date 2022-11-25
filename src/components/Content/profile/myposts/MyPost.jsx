@@ -11,7 +11,8 @@ const MyPost = (props) => {
     <div>
       <h2 className={s.header}>My posts</h2>
       {drawPosts}
-      <Newpost />
+
+      <Newpost addPost={props.addPost} />
     </div>
   );
 };
