@@ -44,6 +44,8 @@ function App(props) {
                     addMessage={props.addMessage}
                     allDialogs={props.state.messages.allDialogs}
                     allMessages={props.state.messages.allMessages}
+                    updateNewMessageText={props.updateNewMessageText}
+                    newPostText={props.state.messages.newPostText}
                   />
                 }
               />

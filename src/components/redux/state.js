@@ -58,6 +58,7 @@ let state = {
       { imAuthor: true, message: "1243124", id: 4 },
       { imAuthor: false, message: "ыалдтдйлцд", id: 5 },
     ],
+    newMessage: "",
   },
   avatar: {
     friends: [
@@ -90,7 +91,11 @@ export let addMessage = (newMessage) => {
 
 export let updateNewPostText = (newText) => {
   state.profile.newPostText = newText;
-  console.log(state.profile.newPostText);
+  rerenderIntireTree(state);
+};
+export let updateNewMessageText = (newText) => {
+  state.messages.newMessage = newText;
+  console.log(state.messages.newMessage);
   rerenderIntireTree(state);
 };
 export default state;

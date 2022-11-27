@@ -13,7 +13,6 @@ const Profile = (props) => {
         updateNewPostText={props.updateNewPostText}
         newPostText={props.newPostText}
       />
-      />
     </div>
   );
 };

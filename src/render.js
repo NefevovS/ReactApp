@@ -2,6 +2,7 @@ import {
   addMsg,
   addMessage,
   updateNewPostText,
+  updateNewMessageText,
 } from "./components/redux/state";
 import App from "./App";
 import React from "react";
@@ -16,6 +17,7 @@ let rerenderIntireTree = (state) => {
         addMsg={addMsg}
         addMessage={addMessage}
         updateNewPostText={updateNewPostText}
+        updateNewMessageText={updateNewMessageText}
       />
     </React.StrictMode>
   );
