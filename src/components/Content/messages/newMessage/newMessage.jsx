@@ -3,16 +3,15 @@ import s from "./newMessages.module.css";
 
 const NewMessage = (props) => {
   let newMessageElement = React.createRef();
-
+  // dispatch={props.dispatch}
   let addMessage = () => {
-    let text = newMessageElement.current.value;
-    props.addMessage(text);
+    props.dispatch({ type: "addMessage" });
     newMessageElement.current.value = "";
   };
 
   let onPostChange = () => {
     let text = newMessageElement.current.value;
-    props.updateNewMessageText(text);
+    props.dispatch({ type: "updateNewMessageText", newText: text });
   };
   return (
     <div className={s.newPost}>
@@ -22,7 +21,7 @@ const NewMessage = (props) => {
           ref={newMessageElement}
           rows="10"
           cols="50"
-          value={props.newPostText}
+          value={props.NewMessage}
           onChange={onPostChange}
         />
         <input

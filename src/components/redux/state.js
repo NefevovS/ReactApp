@@ -95,25 +95,23 @@ let store = {
       this._rerenderIntireTree(this._state);
       this._state.profile.newPostText = "";
     } else if (action.type === "updateNewPostText") {
+      debugger;
       this._state.profile.newPostText = action.newText;
       this._rerenderIntireTree(this._state);
-    }
-    // else if(action.type===""){}
-    // else if(action.type===""){}
-  },
+    } else if (action.type === "addMessage") {
+      let msg = {
+        imAuthor: true,
+        message: store._state.messages.newMessage,
+        id: 10,
+      };
 
-  addMessage() {
-    let msg = {
-      imAuthor: true,
-      message: store._state.messages.newMessage,
-      id: 10,
-    };
-    this._state.messages.allMessages.push(msg);
-    this._rerenderIntireTree(this._state);
-  },
-  updateNewMessageText(newText) {
-    this._state.messages.newMessage = newText;
-    this._rerenderIntireTree(this._state);
+      this._state.messages.allMessages.push(msg);
+      this._rerenderIntireTree(this._state);
+    } else if (action.type === "updateNewMessageText") {
+      this._state.messages.newMessage = action.newText;
+      debugger;
+      this._rerenderIntireTree(this._state);
+    }
   },
 };
 

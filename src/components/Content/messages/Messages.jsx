@@ -19,11 +19,7 @@ const Messages = (props) => {
       </div>
       <div className={s.message}>
         <ul>{drawMessages}</ul>
-        <NewMessage
-          addMessage={props.addMessage}
-          updateNewMessageText={props.updateNewMessageText}
-          newPostText={props.newPostText}
-        />
+        <NewMessage dispatch={props.dispatch} newMessage={props.newMessage} />
       </div>
     </div>
   );
