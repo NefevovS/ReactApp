@@ -3,16 +3,15 @@ import s from "./Newpost.module.css";
 
 const Newpost = (props) => {
   let newPostElement = React.createRef();
-
+  // dispatch={props.dispatch}
   let addPost = () => {
-    let text = newPostElement.current.value;
-    props.addMsg(text);
+    props.dispatch({ type: "addMsg" });
     newPostElement.current.value = "";
   };
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.updateNewPostText(text);
+    props.dispatch({ type: "updateNewPostText", newText: text });
   };
 
   return (

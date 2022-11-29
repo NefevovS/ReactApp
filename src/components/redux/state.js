@@ -84,26 +84,22 @@ let store = {
   subscribe(observer) {
     this._rerenderIntireTree = observer;
   },
-  // dispatch(action){
-  //   if(action.type===""){}
-  // else if(action.type===""){}
-  // else if(action.type===""){}
-  // else if(action.type===""){}
-  // }
-
-  addMsg() {
-    let newpost = {
-      id: 5,
-      message: store._state.profile.newPostText,
-      likesCount: 0,
-    };
-    this._state.profile.posts.push(newpost);
-    this._rerenderIntireTree(this._state);
-    this._state.profile.newPostText = "";
-  },
-  updateNewPostText(newText) {
-    this._state.profile.newPostText = newText;
-    this._rerenderIntireTree(this._state);
+  dispatch(action) {
+    if (action.type === "addMsg") {
+      let newpost = {
+        id: 5,
+        message: store._state.profile.newPostText,
+        likesCount: 0,
+      };
+      this._state.profile.posts.push(newpost);
+      this._rerenderIntireTree(this._state);
+      this._state.profile.newPostText = "";
+    } else if (action.type === "updateNewPostText") {
+      this._state.profile.newPostText = action.newText;
+      this._rerenderIntireTree(this._state);
+    }
+    // else if(action.type===""){}
+    // else if(action.type===""){}
   },
 
   addMessage() {

@@ -11,9 +11,8 @@ let rerenderIntireTree = () => {
     <React.StrictMode>
       <App
         state={store.getState()}
-        addMsg={store.addMsg.bind(store)}
+        dispatch={store.dispatch.bind(store)}
         addMessage={store.addMessage.bind(store)}
-        updateNewPostText={store.updateNewPostText.bind(store)}
         updateNewMessageText={store.updateNewMessageText.bind(store)}
       />
     </React.StrictMode>

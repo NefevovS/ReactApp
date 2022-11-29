@@ -20,9 +20,7 @@ function App(props) {
                 element={
                   <Profile
                     posts={props.state.profile.posts}
-                    addMsg={props.addMsg}
-                    updateNewPostText={props.updateNewPostText}
-                    newPostText={props.state.profile.newPostText}
+                    dispatch={props.dispatch}
                   />
                 }
               />
@@ -31,9 +29,7 @@ function App(props) {
                 element={
                   <Profile
                     posts={props.state.profile.posts}
-                    addMsg={props.addMsg}
-                    updateNewPostText={props.updateNewPostText}
-                    newPostText={props.state.profile.newPostText}
+                    dispatch={props.dispatch}
                   />
                 }
               />

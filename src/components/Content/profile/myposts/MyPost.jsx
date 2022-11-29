@@ -12,11 +12,7 @@ const MyPost = (props) => {
       <h2 className={s.header}>My posts</h2>
       {drawPosts}
 
-      <Newpost
-        addMsg={props.addMsg}
-        updateNewPostText={props.updateNewPostText}
-        newPostText={props.newPostText}
-      />
+      <Newpost dispatch={props.dispatch} />
     </div>
   );
 };
