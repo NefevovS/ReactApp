@@ -1,17 +1,21 @@
 import React from "react";
 import s from "./Newpost.module.css";
+import {
+  addMsgAction,
+  updateNewPostTextAction,
+} from "./../../../../redux/state";
 
 const Newpost = (props) => {
   let newPostElement = React.createRef();
-  // dispatch={props.dispatch}
+
   let addPost = () => {
-    props.dispatch({ type: "addMsg" });
+    props.dispatch(addMsgAction());
     newPostElement.current.value = "";
   };
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.dispatch({ type: "updateNewPostText", newText: text });
+    props.dispatch(updateNewPostTextAction(text));
   };
 
   return (

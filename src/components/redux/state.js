@@ -109,10 +109,20 @@ let store = {
       this._rerenderIntireTree(this._state);
     } else if (action.type === "updateNewMessageText") {
       this._state.messages.newMessage = action.newText;
-      debugger;
       this._rerenderIntireTree(this._state);
     }
   },
 };
-
+window.store = store;
 export default store;
+
+export const addMsgAction = () => ({ type: "addMsg" });
+export const updateNewPostTextAction = (text) => ({
+  type: "updateNewPostText",
+  newText: text,
+});
+export const addMessageAction = () => ({ type: "addMessage" });
+export const updateNewMessageTextAction = (text) => ({
+  type: "updateNewMessageText",
+  newText: text,
+});
