@@ -81,8 +81,22 @@ let store = {
   _rerenderIntireTree() {
     console.log("ссылка на эту функцию меняется на ссылку observer");
   },
-  addMsg(postMsg) {
-    let newpost = { id: 5, message: postMsg, likesCount: 0 };
+  subscribe(observer) {
+    this._rerenderIntireTree = observer;
+  },
+  // dispatch(action){
+  //   if(action.type===""){}
+  // else if(action.type===""){}
+  // else if(action.type===""){}
+  // else if(action.type===""){}
+  // }
+
+  addMsg() {
+    let newpost = {
+      id: 5,
+      message: store._state.profile.newPostText,
+      likesCount: 0,
+    };
     this._state.profile.posts.push(newpost);
     this._rerenderIntireTree(this._state);
     this._state.profile.newPostText = "";
@@ -91,11 +105,13 @@ let store = {
     this._state.profile.newPostText = newText;
     this._rerenderIntireTree(this._state);
   },
-  subscribe(observer) {
-    this._rerenderIntireTree = observer;
-  },
-  addMessage(newMessage) {
-    let msg = { imAuthor: true, message: newMessage, id: 10 };
+
+  addMessage() {
+    let msg = {
+      imAuthor: true,
+      message: store._state.messages.newMessage,
+      id: 10,
+    };
     this._state.messages.allMessages.push(msg);
     this._rerenderIntireTree(this._state);
   },
