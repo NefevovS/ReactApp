@@ -13,10 +13,8 @@ let rerenderIntireTree = () => {
     </React.StrictMode>
   );
 };
-rerenderIntireTree(store._state);
-store.subscribe(rerenderIntireTree);
+rerenderIntireTree(store._state); // в первый раз отрисовываем state
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+store.subscribe(rerenderIntireTree); // отрисовываем после изменения state, передавая ссылку на rerenderIntireTree в приватную функцию _rerenderIntireTree из state.js
+
 reportWebVitals();

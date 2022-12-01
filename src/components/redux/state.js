@@ -79,12 +79,15 @@ let store = {
     return this._state;
   },
   _rerenderIntireTree() {
-    console.log("ссылка на эту функцию меняется на ссылку observer");
+    //ссылка на эту функцию меняется на ссылку observer(приходит rerenderIntireTree из index)
+    //заглушка что бы компилилcя код
   },
   subscribe(observer) {
     this._rerenderIntireTree = observer;
+    //observer = rerenderIntireTree из index
   },
   dispatch(action) {
+    //из-за observer теперь _rerenderIntireTree ссылается на rerenderIntireTree из index.js
     if (action.type === "addMsg") {
       let newpost = {
         id: 5,
@@ -95,7 +98,6 @@ let store = {
       this._rerenderIntireTree(this._state);
       this._state.profile.newPostText = "";
     } else if (action.type === "updateNewPostText") {
-      debugger;
       this._state.profile.newPostText = action.newText;
       this._rerenderIntireTree(this._state);
     } else if (action.type === "addMessage") {
