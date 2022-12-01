@@ -82,19 +82,19 @@ let store = {
   getState() {
     return this._state;
   },
-  _rerenderIntireTree() {
+  _callsubscribe() {
     //ссылка на эту функцию меняется на ссылку observer(приходит rerenderIntireTree из index)
     //заглушка что бы компилилcя код
   },
   subscribe(observer) {
-    this._rerenderIntireTree = observer;
+    this._callsubscribe = observer;
     //observer = rerenderIntireTree из index
   },
   dispatch(action) {
     profileReducer(store._state.profile, action);
     messagesReducer(store._state.messages, action);
     avatarReducer(store._state.avatar, action);
-    this._rerenderIntireTree(this._state);
+    this._callsubscribe(this._state);
   },
 };
 window.store = store;
