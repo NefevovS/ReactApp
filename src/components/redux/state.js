@@ -1,3 +1,7 @@
+import { profileReducer } from "./profileReducer";
+import { messagesReducer } from "./messagesReducer";
+import { avatarReducer } from "./avatarReducer";
+
 let store = {
   _state: {
     profile: {
@@ -87,32 +91,10 @@ let store = {
     //observer = rerenderIntireTree из index
   },
   dispatch(action) {
-    //из-за observer теперь _rerenderIntireTree ссылается на rerenderIntireTree из index.js
-    if (action.type === "addMsg") {
-      let newpost = {
-        id: 5,
-        message: store._state.profile.newPostText,
-        likesCount: 0,
-      };
-      this._state.profile.posts.push(newpost);
-      this._rerenderIntireTree(this._state);
-      this._state.profile.newPostText = "";
-    } else if (action.type === "updateNewPostText") {
-      this._state.profile.newPostText = action.newText;
-      this._rerenderIntireTree(this._state);
-    } else if (action.type === "addMessage") {
-      let msg = {
-        imAuthor: true,
-        message: store._state.messages.newMessage,
-        id: 10,
-      };
-
-      this._state.messages.allMessages.push(msg);
-      this._rerenderIntireTree(this._state);
-    } else if (action.type === "updateNewMessageText") {
-      this._state.messages.newMessage = action.newText;
-      this._rerenderIntireTree(this._state);
-    }
+    profileReducer(store._state.profile, action);
+    messagesReducer(store._state.messages, action);
+    avatarReducer(store._state.avatar, action);
+    this._rerenderIntireTree(this._state);
   },
 };
 window.store = store;
