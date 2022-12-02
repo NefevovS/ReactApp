@@ -3,7 +3,7 @@ import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import store from "./components/redux/state";
+import store from "./components/redux/store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 let rerenderIntireTree = () => {
@@ -13,7 +13,7 @@ let rerenderIntireTree = () => {
     </React.StrictMode>
   );
 };
-rerenderIntireTree(store._state); // в первый раз отрисовываем state
+rerenderIntireTree(store.getState()); // в первый раз отрисовываем state
 
 store.subscribe(rerenderIntireTree); // отрисовываем после изменения state, передавая ссылку на rerenderIntireTree в приватную функцию _rerenderIntireTree из state.js
 

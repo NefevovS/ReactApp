@@ -1,9 +1,10 @@
 import React from "react";
 import s from "./Newpost.module.css";
+
 import {
   addMsgAction,
   updateNewPostTextAction,
-} from "./../../../../redux/state";
+} from "./../../../../redux/profileReducer";
 
 const Newpost = (props) => {
   let newPostElement = React.createRef();

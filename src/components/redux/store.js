@@ -99,14 +99,3 @@ let store = {
 };
 window.store = store;
 export default store;
-
-export const addMsgAction = () => ({ type: "addMsg" });
-export const updateNewPostTextAction = (text) => ({
-  type: "updateNewPostText",
-  newText: text,
-});
-export const addMessageAction = () => ({ type: "addMessage" });
-export const updateNewMessageTextAction = (text) => ({
-  type: "updateNewMessageText",
-  newText: text,
-});

@@ -15,3 +15,8 @@ export const messagesReducer = (state, action) => {
       return state;
   }
 };
+export const addMessageAction = () => ({ type: "addMessage" });
+export const updateNewMessageTextAction = (text) => ({
+  type: "updateNewMessageText",
+  newText: text,
+});

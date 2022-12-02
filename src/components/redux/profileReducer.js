@@ -16,3 +16,8 @@ export const profileReducer = (state, action) => {
       return state;
   }
 };
+export const addMsgAction = () => ({ type: "addMsg" });
+export const updateNewPostTextAction = (text) => ({
+  type: "updateNewPostText",
+  newText: text,
+});
