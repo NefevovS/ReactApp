@@ -1,4 +1,28 @@
-export const profileReducer = (state, action) => {
+let initialState = {
+  posts: [
+    {
+      id: 1,
+      message:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni blanditiis voluptate debitis error maiores exercitationem consequuntur qui adipisci neque quidem labore iusto, fugiat, sit at ratione natus molestiae aperiam quod?",
+      likesCount: 10,
+    },
+    {
+      id: 2,
+      message:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni blanditiis voluptate debitis error maiores exercitationem consequuntur qui adipisci neque quidem labore iusto, fugiat, sit at ratione natus molestiae aperiam quod?",
+      likesCount: 5,
+    },
+    {
+      id: 3,
+      message:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni blanditiis voluptate debitis error maiores exercitationem consequuntur qui adipisci neque quidem labore iusto, fugiat, sit at ratione natus molestiae aperiam quod?",
+      likesCount: 15,
+    },
+  ],
+  newPostText: "",
+};
+
+const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case "addMsg":
       let newpost = {
@@ -16,8 +40,11 @@ export const profileReducer = (state, action) => {
       return state;
   }
 };
+//action функции
 export const addMsgAction = () => ({ type: "addMsg" });
 export const updateNewPostTextAction = (text) => ({
   type: "updateNewPostText",
   newText: text,
 });
+
+export default profileReducer;

@@ -97,5 +97,5 @@ let store = {
     this._callsubscribe(this._state);
   },
 };
-window.store = store;
+
 export default store;
