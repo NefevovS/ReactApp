@@ -84,7 +84,6 @@ let store = {
   },
   _callsubscribe() {
     //ссылка на эту функцию меняется на ссылку observer(приходит rerenderIntireTree из index)
-    //заглушка что бы компилилcя код
   },
   subscribe(observer) {
     this._callsubscribe = observer;
