@@ -28,9 +28,7 @@ function App(props) {
                 path="/messages/*"
                 element={
                   <Messages
-                    allDialogs={props.state.messages.allDialogs}
-                    allMessages={props.state.messages.allMessages}
-                    newMessage={props.state.messages.newMessage}
+                    messages={props.state.messages}
                     dispatch={props.dispatch}
                   />
                 }

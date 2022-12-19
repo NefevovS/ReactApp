@@ -2,14 +2,14 @@ import React from "react";
 import s from "./Messages.module.css";
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MessageItem/MessageItem";
-import NewMessage from "./newMessage/newMessage";
+import NewMessageContainer from "./newMessage/newMessageContainer";
 
 const Messages = (props) => {
-  const drawDialogs = props.allDialogs.map((item) => (
+  const drawDialogs = props.messages.allDialogs.map((item) => (
     <DialogItem name={item.name} id={item.id} />
   ));
 
-  const drawMessages = props.allMessages.map((item) => (
+  const drawMessages = props.messages.allMessages.map((item) => (
     <MessageItem msg={item.message} imAuthor={item.imAuthor} />
   ));
   return (
@@ -19,7 +19,10 @@ const Messages = (props) => {
       </div>
       <div className={s.message}>
         <ul>{drawMessages}</ul>
-        <NewMessage dispatch={props.dispatch} newMessage={props.newMessage} />
+        <NewMessageContainer
+          dispatch={props.dispatch}
+          newMessage={props.messages.newMessage}
+        />
       </div>
     </div>
   );

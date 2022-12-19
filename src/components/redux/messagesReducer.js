@@ -44,6 +44,7 @@ const messagesReducer = (state = initialState, action) => {
         id: 10,
       };
       state.allMessages.push(msg);
+      state.newMessage = "";
       return state;
     case "updateNewMessageText":
       state.newMessage = action.newText;

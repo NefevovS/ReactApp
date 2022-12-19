@@ -8,15 +8,16 @@ import {
 
 const NewMessage = (props) => {
   let newMessageElement = React.createRef();
+
   let addMessage = () => {
-    props.dispatch(addMessageAction());
-    newMessageElement.current.value = "";
+    props.addMessage();
   };
 
-  let onPostChange = () => {
+  let onTextChange = () => {
     let text = newMessageElement.current.value;
-    props.dispatch(updateNewMessageTextAction(text));
+    props.onTextChange(text);
   };
+
   return (
     <div className={s.newPost}>
       <div className={s.postform}>
@@ -25,8 +26,8 @@ const NewMessage = (props) => {
           ref={newMessageElement}
           rows="10"
           cols="50"
-          value={props.NewMessage}
-          onChange={onPostChange}
+          value={props.newMessage}
+          onChange={onTextChange}
         />
         <input
           type="button"
