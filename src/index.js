@@ -15,9 +15,6 @@ let rerenderIntireTree = () => {
 };
 rerenderIntireTree(store.getState()); // в первый раз отрисовываем state
 
-store.subscribe(() => {
-  let state = store.getState();
-  rerenderIntireTree(state);
-}); // отрисовываем после изменения state, передавая ссылку на rerenderIntireTree в приватную функцию _rerenderIntireTree из state.js
+store.subscribe(() => rerenderIntireTree(store.getState())); // отрисовываем после изменения state, передавая ссылку на rerenderIntireTree в приватную функцию _rerenderIntireTree из state.js
 
 reportWebVitals();
