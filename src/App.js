@@ -16,19 +16,10 @@ function App(props) {
           <div className="app-wrapper">
             <Routes>
               <Route
-                path="/"
-                element={
-                  <Profile
-                    posts={props.state.profile.posts}
-                    dispatch={props.dispatch}
-                  />
-                }
-              />
-              <Route
                 path="/profile"
                 element={
                   <Profile
-                    posts={props.state.profile.posts}
+                    profile={props.state.profile}
                     dispatch={props.dispatch}
                   />
                 }

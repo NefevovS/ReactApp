@@ -1,22 +1,16 @@
 import React from "react";
 import s from "./Newpost.module.css";
 
-import {
-  addMsgAction,
-  updateNewPostTextAction,
-} from "./../../../../redux/profileReducer";
-
 const Newpost = (props) => {
   let newPostElement = React.createRef();
 
   let addPost = () => {
-    props.dispatch(addMsgAction());
-    newPostElement.current.value = "";
+    props.addPost();
   };
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.dispatch(updateNewPostTextAction(text));
+    props.onPostChange(text);
   };
 
   return (
