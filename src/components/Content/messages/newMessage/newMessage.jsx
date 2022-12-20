@@ -1,11 +1,6 @@
 import React from "react";
 import s from "./newMessages.module.css";
 
-import {
-  addMessageAction,
-  updateNewMessageTextAction,
-} from "./../../../redux/messagesReducer";
-
 const NewMessage = (props) => {
   let newMessageElement = React.createRef();
 
