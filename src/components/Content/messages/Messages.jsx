@@ -19,10 +19,7 @@ const Messages = (props) => {
       </div>
       <div className={s.message}>
         <ul>{drawMessages}</ul>
-        <NewMessageContainer
-          dispatch={props.dispatch}
-          newMessage={props.messages.newMessage}
-        />
+        <NewMessageContainer />
       </div>
     </div>
   );

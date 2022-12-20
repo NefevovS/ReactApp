@@ -12,10 +12,7 @@ const MyPost = (props) => {
     <div>
       <h2 className={s.header}>My posts</h2>
       {drawPosts}
-      <NewpostContainer
-        newPostText={props.profile.newPostText}
-        dispatch={props.dispatch}
-      />
+      <NewpostContainer />
     </div>
   );
 };

@@ -1,26 +1,33 @@
 import React from "react";
 import s from "./newMessages.module.css";
 import NewMessage from "./newMessage";
-
+import StoreContext from "./../../../../storeContext";
 import {
   addMessageAction,
   updateNewMessageTextAction,
 } from "../../../redux/messagesReducer";
 
-const NewMessageContainer = (props) => {
-  let addMessage = () => {
-    props.dispatch(addMessageAction());
-  };
-
-  let onTextChange = (text) => {
-    props.dispatch(updateNewMessageTextAction(text));
-  };
+const NewMessageContainer = () => {
   return (
-    <NewMessage
-      addMessage={addMessage}
-      onTextChange={onTextChange}
-      newMessage={props.newMessage}
-    />
+    <StoreContext.Consumer>
+      {(store) => {
+        let addMessage = () => {
+          store.dispatch(addMessageAction());
+        };
+
+        let onTextChange = (text) => {
+          store.dispatch(updateNewMessageTextAction(text));
+        };
+
+        return (
+          <NewMessage
+            addMessage={addMessage}
+            onTextChange={onTextChange}
+            newMessage={store.getState().messages.newMessage}
+          />
+        );
+      }}
+    </StoreContext.Consumer>
   );
 };
 
